@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&display=swap');
+
+
+
+:root {
+    --themered: #e43a47;
+    --gray: #efefef;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button,
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.sectionTitle {
+    width: 300px;
+    border-bottom: 3px solid #d52828a4;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0 auto 50px;
+    position: relative;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #83d6b9df;
+}
+/* .sectionTitle {
+    width: 300px;
+    border-bottom: 3px solid #4de9e9a4;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0 auto 50px;
+    position: relative;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #83d6b9df;
+} */
+
+.sectionTitle::after {
+    display: inline-block;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: var(--themered);
+    position: absolute;
+    Left: calc(50% - 10px);
+    top: calc(75% - 7px);
+    transform: rotate(45deg) translate(50%, 50%);
+    border: 3px solid #fff;
+}
+
+section {
+    padding: 50px 0;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+}
+
+/* common style ends here */
+
+/* home styling starts */
+
+
+#about1 {
+    color: #d8cccc;
+}
+
+.shiftright {
+    margin-left: 4%;
+}
+
+.banner {
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.banner h1 {
+    margin-top: 230px;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: rgb(244, 239, 237);
+    text-shadow: 0 0 2px #000;
+    width: 50%;
+    line-height: 4.2rem;
+    font-weight: 100;
+}
+
+.banner h1 span {
+    display: inline-block;
+    line-height: 3.5rem;
+    padding: 0 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+
+/* animation from chatgpt  */
+
+
+.slider {
+    width: 75%;
+    overflow: hidden;
+    margin-left: 225px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.slide {
+    width: 80%;
+    height: 450px;
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 150%;
+}
+
+.slide.active {
+    display: block;
+}
+
+
+@keyframes slideAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slide.active {
+    animation: slideAnimation 3s ease-in-out;
+}
+
+
+/* Animation ends here */
+
+
+/* coloring the elements in the list */
+
+.workareas {
+    color: #80bad1;
+    font-weight: 70%;
+}
+
+.workarealist {
+    color: #3fe95b;
+}
+
+.about_us {
+    color: #edf76de5;
+}
+
+/* .workareas {
+    color: #abc99f;
+    font-weight: 70%;
+}
+
+.workarealist {
+    color: #fab3b9;
+}
+
+.about_us {
+    color: #bac067e5;
+} */
+
+
+/* Adding different colors in different sections */
+
+#aboutSection {
+    background-color: rgb(35, 86, 101);
+}
+
+#workareas {
+    background-color: #1a1937e3;
+}
+
+#ourefforts {
+    background-color: #4f2b71df;
+}
+
+
+/* Scroll animation starts*/
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* Scroll animation ends*/
+
+/* footer starts here  */
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 0 30px;
+    color: #a2b5cd;
+}
+
+footer.top {
+    border-bottom: 2px solid #3a4f6a;
+    padding-bottom: 20px;
+}
+
+footer.top .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+footer.bottom {
+    padding: 20px 0;
+    justify-content: space-between;
+}
+
+footer .links>div {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+footer h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #540707;
+}
+
+footer .legal {
+    font-size: 12px;
+}
+
+footer .legal>a {
+    margin: 0 4px;
+}
+
+footer .legal>span {
+    margin-right: 10px;
+}
+
+footer.bottom .links {
+    display: flex;
+    gap: 18px;
+}
+
+@media (width<620px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer.bottom {
+        gap: 16px;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (width>=620px) {
+    footer {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 0;
+    }
+}
+
+footer.bottom .links>a {
+    font-size: 24px;
+}
+
+@media(width<420px) {
+    footer {
+        text-align: center;
+        align-items: center;
+    }
+
+    footer.top .links {
+        grid-template-columns: 1fr;
+    }
+
+    footer.bottom {
+        align-items: center;
+    }
+
+    footer .legal>span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 2px;
+    }
+}
+
+/* footer ends here  */
+
+
+/* Progress bar animation starts*/
+
+.progress-bar{
+    position: fixed;
+    width: 100%;
+    height: 1vh;
+    z-index: 5;
+}
+.filled {
+    width: 0;
+    height: 60%;
+    background-image: linear-gradient(to right,blue,violet);
+}
