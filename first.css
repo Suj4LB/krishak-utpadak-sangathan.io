@@ -29,6 +29,9 @@ body {
     text-transform: uppercase;
     color: #83d6b9df;
 }
+
+/* Edit the color of the headings  */
+
 /* .sectionTitle {
     width: 300px;
     border-bottom: 3px solid #4de9e9a4;
@@ -322,5 +325,7 @@ footer.bottom .links>a {
 .filled {
     width: 0;
     height: 60%;
-    background-image: linear-gradient(to right,blue,violet);
+    background-image: linear-gradient(to right,blue,yellow);
 }
+
+/* Progress bar animation ends */
