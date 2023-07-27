@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&display=swap');
 
 
+/* Common styling starts */
 
 :root {
     --themered: #e43a47;
@@ -15,6 +16,114 @@ button,
 body {
     font-family: "Poppins", sans-serif;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.fullcontainer {
+    width: 100%;
+}
+
+.container {
+    width: 1140px;
+    margin: auto;
+}
+
+/* Common styling ends here */
+
+/* home styling starts */
+
+header {
+    width: 100%;
+    background-color: rgba(93, 153, 146, 0.6);
+    position: fixed;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container .logo {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 75px;
+}
+
+header .container .logo img {
+    height: 100%;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    display: inline-block;
+    height: 75px;
+    line-height: 75px;
+    padding: 0 15px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: var(--themered);
+
+}
+
+.banner {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../Images/vectorised.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.banner h1 {
+    margin-top: 230px;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    width: 50%;
+    line-height: 402rem;
+    font-weight: 100;
+}
+
+.banner h1 span {
+    background-color: #758e95;
+    display: inline-block;
+    line-height: 3.5 rem;
+    padding: 0 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.banner p {
+    color: #fff;
+    width: 50%;
+    text-shadow: 0 0 2px #000;
+    margin-top: 10px;
+}
+
+/* Home styling ends here */
 
 
 .sectionTitle {
@@ -106,7 +215,7 @@ section {
 }
 
 
-/* animation from chatgpt  */
+/* image slider animation from chatgpt */
 
 
 .slider {
@@ -165,19 +274,6 @@ section {
 .about_us {
     color: #edf76de5;
 }
-
-/* .workareas {
-    color: #abc99f;
-    font-weight: 70%;
-}
-
-.workarealist {
-    color: #fab3b9;
-}
-
-.about_us {
-    color: #bac067e5;
-} */
 
 
 /* Adding different colors in different sections */
@@ -316,16 +412,168 @@ footer.bottom .links>a {
 
 /* Progress bar animation starts*/
 
-.progress-bar{
+.progress-bar {
     position: fixed;
     width: 100%;
     height: 1vh;
     z-index: 5;
 }
+
 .filled {
     width: 0;
     height: 60%;
-    background-image: linear-gradient(to right,blue,yellow);
+    background-image: linear-gradient(to right, blue, yellow);
 }
 
 /* Progress bar animation ends */
+
+
+
+
+/* Making the website responsive */
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        width: 90%;
+        font-size: 4px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        height: 60px;
+        margin-top: 2px;
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .banner {
+        min-height: 100vh;
+        width: 106%;
+        background-image: url(../Images/vectorised.png);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .logo img{
+        width: 95px;
+    }
+
+    .container p{
+        font-size: 16px;
+        /* visibility: hidden; */
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        margin-top: 65px;
+        margin-bottom: 160px;
+        margin-left: 2px;
+        color: #ffffff;
+    }
+
+    .slider {
+        width: 75%;
+        overflow: hidden;
+        margin-left: 0px;
+    }
+
+    body {
+        background-color: #3a4f6a;
+        display: grid;
+    }
+    
+    #aboutSection {
+        background-color: #3a4f6a;
+        width: 106%;
+    }
+    
+    #workareas {
+        background-color: #3a4f6a;
+        width: 106%;
+    }
+    
+    #ourefforts {
+        background-color: #3a4f6a;
+        width: 106%;
+    }
+
+    .workareas,
+    .aboutlist {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 600px between max-width:800px) {
+
+    /* Make responsive between 600px to 1150px */
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .banner {
+        min-height: 100vh;
+        width: 106%;
+        background-image: url(../Images/vectorised.png);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .logo img{
+        width: 95px;
+    }
+
+    .workareas {
+        color: #80bad1;
+        font-weight: 70%;
+    }
+    
+    .workarealist {
+        color: #3fe95b;
+    }
+    
+    .about_us {
+        color: #edf76de5;
+    }
+    
+    li{
+        font-size: 14px;
+    }
+
+    .container p{
+        font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        margin-top: 65px;
+        margin-bottom: 160px;
+        margin-left: 2px;
+        color: #ffffff;
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    #aboutSection {
+        background-color: #3a4f6a;
+        width: 106%;
+    }
+
+    #workareas {
+        width: 106%;
+    }
+    
+    #ourefforts {
+        width: 106%;
+    }
+} 
