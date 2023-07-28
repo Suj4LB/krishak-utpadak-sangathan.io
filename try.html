@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./harder.css"> <!-- this is for home styling -->
+    <title>FPO-Tikri</title>
     <link rel="stylesheet" href="./first.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="scroll.js" defer></script>
 
 </head>
@@ -20,7 +20,7 @@
         <header>
             <div class="container">
                 <div class="logo">
-                    <img src="../Images/ngo sample logo.png" alt="sample logo" />
+                    <img src="./Images/ngo sample logo.jpg" alt="sample logo" />
                 </div>
 
                 <nav>
@@ -38,7 +38,18 @@
                             <a href="#ourefforts">Our efforts</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#contact">Our Services</a>
+                            <ul class="dropdown">
+                                <li>
+                                    <a href="https://agrichikitsa.com/testsoilcontact.php" target="_blank">Soil Testing</a>
+                                </li>
+                                <li>
+                                    <a href="https://agrichikitsa.com/smartirrigation.php" target="_blank">Drone</a>
+                                </li>
+                                <li>
+                                    <a href="https://agrichikitsa.com/smartirrigation.php" target="_blank">Agristick</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -289,54 +300,60 @@
 
     <!-- Scroll progress bar ends -->
 
+ 
+    <!-- Footer starts from here  -->
 
-    <!-- Footer start from here  -->
 
-    <footer class="top">
-        <img src="../Images/ngo sample logo.png" alt="sample logo" width="200px" height="100px" />
-        <div class="links">
-            <div>
-                <h2>
-                    Platforms
-                </h2>
-                <a href="#">Directus Core</a>
-                <a href="#homeSection">Go back to top</a>
-                <!-- More links -->
-            </div>
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
+        
+        <ul class="list">
+            <li>
+                <a href="#homeSection">Home</a>
+            </li>
+            <li>
+                <a href="#aboutSection">About us</a>
+            </li>
+            <li>
+                <a href="#workareas">Work Areas</a>
+            </li>
+            <li>
+                <a href="#ourefforts">Our efforts</a>
+            </li>
+        </ul>
+        <p class="copyright">FPO @ 2023</p>
+        
     </footer>
-    <footer class="bottom">
-        <div class="legal">
-            <span>© 2023 All rights reserved</span>
-            <a href="#">License</a>
-            <a href="#">Call Us</a>
-            <!-- More links -->
-            <div class="links">
-                <a href="#" class="fa-brands fa-instagram"></a>
-                <a href="#" class="fa-brands fa-linkedin"></a>
-                <a href="#" class="fa-brands fa-facebook"></a>
-            </div>
-        </div>
-    </footer>
-
+    
     <!-- Footer ends here -->
 
+    <!-- back to top button starts -->
 
-    <!-- Image slider and slide animation javascript starts -->
+    <div id="progress">
+        <span id="progress-value">&#x1F815</span>
+    </div>
+
+
+    <!-- back to top button ends -->
+
+
+    <!-- Image slider and scroll animation javascript starts -->
 
     <script src="slider.js"></script>
     <script type="text/javascript">
         window.addEventListener('scroll', reveal);
-
+        
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
-
+            
             for (var i = 0; i < reveals.length; i++) {
-
+                
                 var windowheight = window.innerHeight;
                 var revealtop = reveals[i].getBoundingClientRect().top;
                 var revealpoint = 150;
-
+                
                 if (revealtop < windowheight - revealpoint) {
                     reveals[i].classList.add('active');
                 }
@@ -346,7 +363,32 @@
             }
         }
     </script>
+    <script type="text/javascript">
+        let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = Math.round((pos * 100) / calcHeight);
+
+            if (pos > 100){
+                scrollProgress.style.display = "grid";
+            } else
+                {scrollProgress.style.display = "none";
+            }
+
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+
+            scrollProgress.style.background = 'conic-gradient (#03cc65 $(scrollValue)%, #d7d7d7 $(scrollValue)%)';
+        };
+
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
+    </script>
     <script src="./scroll.js"></script>
+
 </body>
 
 </html>

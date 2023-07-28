@@ -61,6 +61,8 @@ header .container .logo {
 
 header .container .logo img {
     height: 100%;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 header nav ul {
@@ -85,8 +87,29 @@ header nav ul li a {
 
 header nav ul li a:hover {
     background-color: var(--themered);
-
 }
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li a:hover{
+    background-color: rgba(93, 153, 146, 0.6);
+}
+
+ul li:hover ul.dropdown{
+    display: flex;
+    flex-direction: row;
+}
+
+ul li ul.dropdown{
+    width: 70%;
+    background-color: rgba(93, 153, 146, 0.6);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
 
 .banner {
     min-height: 100vh;
@@ -307,107 +330,67 @@ section {
 
 /* Scroll animation ends*/
 
-/* footer starts here  */
 
-footer {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 0 30px;
-    color: #a2b5cd;
+/* footer part starts */
+
+.footer{
+    background-color: rgb(169, 211, 211);
 }
 
-footer.top {
-    border-bottom: 2px solid #3a4f6a;
-    padding-bottom: 20px;
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
 }
 
-footer.top .links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-footer.bottom {
-    padding: 20px 0;
-    justify-content: space-between;
-}
-
-footer .links>div {
-    display: grid;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-footer h2 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 400;
-    color: #540707;
-}
-
-footer .legal {
-    font-size: 12px;
-}
-
-footer .legal>a {
-    margin: 0 4px;
-}
-
-footer .legal>span {
-    margin-right: 10px;
-}
-
-footer.bottom .links {
-    display: flex;
-    gap: 18px;
-}
-
-@media (width<620px) {
-    footer {
-        flex-direction: column;
-    }
-
-    footer.bottom {
-        gap: 16px;
-        flex-direction: column-reverse;
-    }
-}
-
-@media (width>=620px) {
-    footer {
-        margin: 0 auto;
-        max-width: 600px;
-        padding: 0;
-    }
-}
-
-footer.bottom .links>a {
+.footer .social a{
     font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
 }
 
-@media(width<420px) {
-    footer {
-        text-align: center;
-        align-items: center;
-    }
-
-    footer.top .links {
-        grid-template-columns: 1fr;
-    }
-
-    footer.bottom {
-        align-items: center;
-    }
-
-    footer .legal>span {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 2px;
-    }
+.footer .social a:hover{
+    opacity: 0.9;
 }
 
-/* footer ends here  */
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a{
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li a :hover{
+    opacity: 1;
+}
+
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* footer part ends */
+
+
 
 
 /* Progress bar animation starts*/
@@ -421,11 +404,43 @@ footer.bottom .links>a {
 
 .filled {
     width: 0;
-    height: 60%;
-    background-image: linear-gradient(to right, blue, yellow);
+    height: 45%;
+    /* background-image: linear-gradient(to right, blue, yellow); */
+    background-image: linear-gradient(to right, violet,indigo,blue,green,yellow,orange,red);
 }
 
 /* Progress bar animation ends */
+
+
+/* Back to top button part starts */
+
+
+    #progress{
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        height: 70px;
+        width: 70px;
+        display: none;
+        place-items: center;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0 ,0.2);
+        cursor: pointer;
+    }
+
+    #progress-value{
+        display: block;
+        height: calc(100% - 15px);
+        width: calc(100% - 15px);
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 35px;
+        color: #000;
+    }
+
+/* Back to top button part ends */
 
 
 
@@ -443,8 +458,12 @@ footer.bottom .links>a {
     }
 
     nav {
-        height: 60px;
+        height: 65px;
         margin-top: 2px;
+    }
+
+    header nav ul li a:hover {
+        background-color: var(--themered);
     }
 
     header .container {
@@ -461,12 +480,11 @@ footer.bottom .links>a {
     }
 
     .logo img{
-        width: 95px;
+        width: 65px;
     }
 
     .container p{
         font-size: 16px;
-        /* visibility: hidden; */
         display: flex;
         flex-wrap: wrap;
         align-self: center;
